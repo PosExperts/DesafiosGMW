@@ -3,7 +3,6 @@ var click = { "startPos": "", "endPos": ""
 			};
 var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 			   "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
  var words = [ 
 		{ "word": "CIBERDELINCUENTE", "direction": "E", "start": 363},
 		{ "word": "PHISHING", "direction": "S", "start": 22},
@@ -24,13 +23,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 		{ "word": "FILTRO", "direction": "SE", "start": 41},
 		{ "word": "CRIPTOMONEDA", "direction": "E", "start": 381},
 		{ "word": "AUTENTICACIÓN", "direction": "S", "start": 58},
-		
-
-
-
 			 ];
-
-
 // Prepare the wordsearch with random letters and word layout
 $(document).ready(function() {
 	// grab the size of the grid.  I used this method in case I need to 
@@ -42,7 +35,6 @@ $(document).ready(function() {
 		$(".letters").append("<span class='" + (i + 1) + "'>" + 
 							getRandomLetter() + "</span>");
 	}
-
 	// insert the words onto the board
 	for (var i = 0; i < words.length; i++) {
 		words[i].end = words[i].start;
@@ -52,18 +44,15 @@ $(document).ready(function() {
 		$(".words").append("<span class='" + (i) + "'>" +  
 							words[i].word + "</span>");	
 	}
-
 	$("#menu").on("mouseup", function() {
 		$(this).css( {"display": "none"})
 		$("#main").slideDown("slow", function() {
 		})
 	});
-})
-
+	})
 function getRandomLetter() {
 	return letters[Math.floor(Math.random() * letters.length)];
 }
-
 function displayWord(w) {
 	for (var j = 0; j < w.word.length; j++){
 		if (w.direction == "N") {
@@ -100,8 +89,6 @@ function displayWord(w) {
 		}
 	}
 }
-
-
 // start of x & y, end of x & y. COLORSITO #ff46c8ec  
 var sX, sY, eX, eY, canvas, ctx, height, width, diff;
 var r = 14;
@@ -109,7 +96,6 @@ var n = Math.sqrt((r * r) / 2);
 var strokeColor = "yellow";
 var isMouseDown = false;
 var mouseMoved = false;
-
 $(document).ready(function() {
 	$("#c").on("mousedown mouseup mousemove mouseleave", function(e) {
 		e.preventDefault();
@@ -117,7 +103,6 @@ $(document).ready(function() {
 		if (e.type == "mousedown") {
 			setCanvas("c");			
 			isMouseDown = true;
-      
       // Used for Firefox
 			sX = e.offsetX || e.clientX - $(e.target).offset().left;
 			sY = e.offsetY || e.clientY - $(e.target).offset().top;
@@ -126,7 +111,6 @@ $(document).ready(function() {
 			sY -= (sY % 20);
 			if (!(sX % 40)) sX += 20;
 			if (!(sY % 40)) sY += 20;
-
 			setPos(sX, sY, "start");
 			draw(e.type);
 		} 
@@ -143,12 +127,10 @@ $(document).ready(function() {
 			ctx.clearRect(0, 0, width, height);
 			if (mouseMoved) {
 				mouseMoved = false;
-
 				eX -= eX % 20;
 				eY -= eY % 20;
 				if (!(eX % 40)) eX += 20;
 				if (!(eY % 40)) eY += 20;
-
 				// draw the last line and clear the canvas to check and see if its the 
 				// correct word
 				draw(e.type);
@@ -165,17 +147,14 @@ $(document).ready(function() {
 						alert("Bién Hecho!");
 					}
 				}
-
 			}
 		} 
 		else if (e.type == "mouseleave") {
 			isMouseDown = false;
 			draw(e.type);
 		}
-
 	});
 })
-
 // This function is called when lines need to be drawn on the game
 function draw(f) {
 	// used to draw an arc.  takes in two numbers that represent the beginning
@@ -187,7 +166,6 @@ function draw(f) {
 		ctx.strokeStyle = strokeColor;
 		ctx.stroke();
 	}
-
 	// used to draw the two lines around letters
 	function drawLines(mX1, mY1, lX1, lY1, mX2, mY2, lX2, lY2) {
 		ctx.beginPath();
@@ -218,10 +196,8 @@ function draw(f) {
 			if (f == "mousemove") ctx.clearRect(0, 0, width, height);
 			drawArc(sX, sY, 0, 1); // draw bottom arc
 			drawArc(sX, eY, 1, 2); // draw top arc
-
 			// draw the two lines that connect the bottom and the top arcs
 			drawLines(sX + r, sY, sX + r, eY, sX - r, sY, sX -r, eY);	
-
 			// if the player is selecting this as the last letter set its position 
 			// for wordcheck
 			if (f == "mouseup") setPos(sX, eY, "end");	
@@ -267,7 +243,6 @@ function draw(f) {
 					  sX - n, sY + n, sX - n - diff, sY + n - diff);
 			if (f == "mouseup") setPos(sX - diff, sY - diff, "end");
 		} 
-
 		// NE
 		if ((limit < -1 && limit > -6) && (eX > sX && eY < sY)) {
 			if (f == "mousemove") ctx.clearRect(0, 0, width, height);
@@ -299,14 +274,11 @@ function draw(f) {
 			if (f == "mouseup") setPos(sX - diff, sY - diff, "end");
 		} 
 	}
-
 	else if (f == "mouseleave") {
 		setCanvas("c");
 		ctx.clearRect(0,0,width,height);
 	}
 }
-
-
 // change the canvas between the bottom and top layer
 function setCanvas(id) {
 	canvas = document.getElementById(id);
@@ -314,8 +286,6 @@ function setCanvas(id) {
 	width = canvas.width;
 	height = canvas.height;
 }
-
-
 // set the offsets to numbers that match the class names of each letter
 function setPos(x, y, loc) {
 	tX = Math.floor((x / 8) / 5 ) + 1;
@@ -323,8 +293,6 @@ function setPos(x, y, loc) {
 	if (loc == "start") click.startPos = (tY - 1) * 20 + tX;
 	else click.endPos = (tY - 1) * 20 + tX;
 }
-
-
 // verify if the word chosen is the correct one. If a player decides
 // to highlight a word starting from last letter to first this function
 // will also support that ability
@@ -346,7 +314,6 @@ function checkWord() {
 	}
 	else return false;
 }
-
 // scratch the word on the right out when the word is found on the left
 function scratchWord() {
 	for (var i = 0; i < words.length; i++) {
@@ -357,9 +324,7 @@ function scratchWord() {
 		}
 	}
 	// check if the game is over
-
 }
-
 function isEndOfGame(){
 	return pos.every(function(o) { return o.start === 0 && o.end === 0; });
 }

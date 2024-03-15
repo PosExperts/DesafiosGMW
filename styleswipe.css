@@ -17,31 +17,24 @@
       }
   }
   /*-------------------------------------------------------------------------------------------------*/
-  /* Interlace *//*
+  /* Interlace */
   body::after {
-    content: '';
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: linear-gradient(
-      rgba(0,0,0,.2) 0px,
-      rgba(0,0,0,.1) 1px,
-      rgba(0,0,0,.2) 2px,
-      rgba(0,0,0,.1) 5px
-    );
-    background-size: 100% 10px;
-    animation: interference 0.25s steps(4) infinite;
-    z-index: -1;
-    transform:translateZ(size);
-  }
-  @keyframes interference {
-    to {
-      transform: translateY(-1em) translateZ(10px);
-    }
-  }*/
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    rgba(0,0,0,.2) 0px,
+    rgba(0,0,0,.1) 1px,
+    rgba(0,0,0,.2) 2px,
+    rgba(0,0,0,.1) 5px
+  );
+  background-size: 100% 8px; 
+  z-index: -1;
+}
   /*-------------------------------------------------------------------------------------------------*/
  h1 {
     font-family: 'Pixeled';
