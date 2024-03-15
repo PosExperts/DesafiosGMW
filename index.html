@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafios GMW 2024</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!--<div id="gradient"></div>-->
+<h2>DESAFIOS 2024</h2>
+
+<div id="app" class="container">
+  <card data-image="./IMG/swiper.png" 
+  data-link="./swipe.html">
+    <h1 slot="header">Desafio<br><span class="smaller">cibernetico</span></h1>
+    <p slot="content">No dejes que te engañen, filtra los mensajes maliciosos!</p>
+  </card>
+  <card data-image="./IMG/sopa.png" 
+  data-link="./sopa.html">
+    <h1 slot="header">Descifra el mensaje</h1>
+    <p slot="content">Desencripta las palabras escondidas!</p>
+  </card>
+  <card data-image="./IMG/pacman.png" 
+  data-link="./pacman.html">
+    <h1 slot="header">Malware maze</h1>
+    <p slot="content">No dejes que los malware te atrapen!</p>
+  </card>
+  <card data-image="./IMG/transfer.png" 
+  data-link="./transfer.html">
+    <h1 slot="header">Transfer</h1>
+    <p slot="content">Realiza la mayor cantidad de transferencias!</p>
+  </card> 
+  <footer>
+    <img src="./IMG/LogoSV.png"class="img_pie_izquierda">
+    <img src="./IMG/GMWLogo_Color_S2.png"class="img_pie_derecha_2">
+    <img src="./IMG/BCRLogo_Color_S1.png"class="img_pie_derecha_1">
+  </footer>
+
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+<script  src="./cartas.js"></script>
+</body>
+
+</html>

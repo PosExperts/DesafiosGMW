@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  	<meta charset="utf-8">
+    <title>Decifra el Mensaje</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fresca">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Happy+Monkey">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="styleswipe.css">
+</head>
+<body>
+  <img class="menu-button" src="./IMG/menu.svg"
+onclick="window.location.href='./index.html'">
+
+  <div id="gradient"></div>
+  <h1>DECIFRA EL MENSAJE</h1>
+	<div id="main">
+		<div class="left">
+      <div class="letters">
+        <canvas id="a" width="800" height="800"></canvas> <!-- 800 para 20x20 -->
+        <canvas id="c" width="800" height="800"></canvas> <!-- 400 para 10x10 -->
+      </div>
+    </div>
+    <div class="right">
+      <div class="words">
+      </div>
+  	</div>
+  </div>
+</body>
+  <script  src="./sopa.js"></script>
+</body>
+</html>
