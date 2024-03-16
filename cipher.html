@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Descifra el mensaje</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <img class="menu-button" src="./IMG/menu.svg"
+onclick="window.location.href='./index.html'">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <title>Descifra el mensaje</title>
+</head>
+<body>
+  <h1><br>Descifra<br><span class="smaller">el mensaje</span></h1>
+<div class="container">
+  <div class="text-center">
+    <div class="intentos">
+      Intentos: <span id='mistakes'>0</span> de <span id='maxWrong'></span>
+   </div>
+    <img id='hangmanPic' src="./IMG/Cipher/0.png" alt="">
+    <div class="guiones">
+    <p id="wordSpotlight">The word to be guessed goes here</p>
+    </div>
+   <br>
+    <div id="keyboard"></div>
+   </div>
+  </div> 
+</div>
+<button class="b_reiniciar" onClick="reset()">REINICIAR</button>
+</body>
+</html>
+  <script  src="./cipher.js"></script>
+</body>
+<footer>
+  <img src="./IMG/LogoSV.png"class="img_pie_izquierda">
+  <img src="./IMG/GMWLogo_Color_S2.png"class="img_pie_derecha_2">
+  <img src="./IMG/BCRLogo_Color_S1.png"class="img_pie_derecha_1">
+</footer>
+</html>

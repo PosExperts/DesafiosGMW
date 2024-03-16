@@ -13,9 +13,11 @@ document.addEventListener('touchend', handleDragEnd, false);
 
 // Define a pool of card image paths
 const cardPool = [
-    './IMG/Swipe/malware_left.png',
-    './IMG/Swipe/mail_right.png',
+    './IMG/Swipe/mail1_right.png',
+    './IMG/Swipe/malware1_left.png',
+    './IMG/Swipe/mail2_right.png',
     './IMG/Swipe/malware2_left.png',
+    './IMG/Swipe/malware3_left.png',
 
     // Add more paths as needed
 ];
@@ -85,12 +87,12 @@ function handleDragEnd(event) {
         // Remove the feedback after a certain duration (e.g., 1 second)
         setTimeout(() => {
             feedback.remove();
-        }, 1000);
+        }, 3000);
 
         console.log(`Score: ${score}`);
         
    // Update the displayed score in the HTML
-   document.getElementById('scoreDisplay').innerText = `Score: ${score}`;
+   document.getElementById('scoreDisplay').innerText = `Puntos: ${score}`;
 
         removeCard(card);
         addNewCard();

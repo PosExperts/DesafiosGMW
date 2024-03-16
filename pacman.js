@@ -7,7 +7,6 @@
  * fix what happens when a ghost is eaten (should go back to base)
  * do proper ghost mechanics (blinky/wimpy etc)
  */
-
 var NONE        = 4,
     UP          = 3,
     LEFT        = 2,
@@ -1005,6 +1004,7 @@ var PACMAN = (function () {
         } 
 
         drawFooter();
+        
     }
 
     function eatenPill() {
@@ -1271,3 +1271,4 @@ Object.prototype.clone = function () {
     }
     return newObj;
 };
+

@@ -231,6 +231,8 @@ canvas {
     text-align: center;
     opacity: 0.9;
     filter: drop-shadow(0 0 10px rgb(1, 255, 1));
+    font-size: larger;
+
   }
   .incorrect{
     position: absolute;
@@ -241,12 +243,15 @@ canvas {
     text-align: center;
     opacity: 0.9;
     filter: drop-shadow(0 0 10px rgb(255, 166, 1));
+    font-size: larger;
+
   }
   .score-text {
     position: absolute;
-    top: 90%;
-    right: 46%;
+    bottom: 0%;
+    right: 44%;
     transform: translateY(-50%);
     font-family: 'Pixeled';
     filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+    font-size: larger;
 }

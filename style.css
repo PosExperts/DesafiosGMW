@@ -117,7 +117,7 @@ h2:hover {
   justify-content: center;
 }
 .card-wrap {
-  margin: 10px;
+  margin: 10px; /* MARGEN ENTRE CARTAS JS*/
   transform: perspective(800px);
   transform-style: preserve-3d;
   cursor: pointer;
@@ -144,11 +144,11 @@ h2:hover {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: rgba(248, 32, 255, 0.342) 0 0 40px 5px, white 0 0 0 1px, rgba(174, 53, 255, 0.384) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
 }
-.card {
+.card { /* TAMAÑO DE CARTAS JS*/
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 235px;
+  height: 315px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -236,13 +236,6 @@ h2:hover {
   right: 6%;
   width: 10%;
   transform: translateY(-50%);
-}
-.BCR_PACMAN {
-  position: absolute;
-  top: 50%;
-  right: 47.5%;
-  width: 5%;
-  z-index: 9999;
 }
 .menu-button {
   position: fixed;
@@ -527,11 +520,20 @@ h2:hover {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
   font-size: 20px;
-  text-align: justify;
-  text-align-last: left;
+  text-align:justify;
+  text-align-last:left;
 }
 /*-------------------------------------------------------------------------------------------------*/
 /* Pacman */
+.img_pacman {
+  width: 60px; /* Ancho original de la imagen */
+  height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+  position: absolute;
+  z-index: 9995;
+  left: 50%; /* Centrado horizontalmente */
+  top: 470px;
+  transform: translate(-50%, -50%); /* Ajuste final para centrado */
+}
 #pacman {
   height:743px;
   width:564px;
@@ -546,36 +548,258 @@ h2:hover {
 /*-------------------------------------------------------------------------------------------------*/
 /* Controles */
 .controles{
-  width: 10%; /* El contenedor ocupará el 70% del ancho de la pantalla */
-  height: 10vh; /* El contenedor ocupará el 70% de la altura de la pantalla */
+  position: fixed;
+  top: 60%;
+  right: 5%;
+  width: 150px;
+  height:150px;
+  transform: translateY(-50%);
+  width: 10%;
   border: none;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: white;
+}
+.boton_e{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+.boton_p{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+.boton_up{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+.boton_down{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+.boton_right{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+.boton_left{
+  background-color: #663366;
+  color: #ffff00;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 9995;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/* CIPHER */
+.boton_letra {
+  /* Define your button styles here */
+  background-color: #ffffff28;
+  color: #ffffff; /* Example text color */
+  padding: 5px 10px; /* Example padding */
+  border-radius: 4px; /* Example border radius for rounded corners */
+  border-color: #ffffff;
+  border-width: 2px;
+  font-size: 18px; /* Example font size */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.253); 
+}
+.boton_letra:hover {
+  color:rgb(240, 255, 28);
+  background-color: #663366;
+  box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.616); 
+}
+.intentos{
+  font-family: 'Pixeled';
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-shadow: 0 0 10px rgb(255, 226, 244);
+  margin-top: 0%;
+}
+#keyboard{
+  font-family: 'Pixeled';
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+.guiones{
+  font-family: 'Pixeled';
+  color: #fcff56;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-shadow: 0 0 10px rgb(243, 255, 77);
+  margin-top: 0%;
+}
+.b_reiniciar {
+  font-family: 'Pixeled';
+  color: white;
+  background-color: #ffbc40;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.425); 
+}
+
+.b_reiniciar:hover {
+  color: rgb(175, 104, 22);
+  box-shadow: 0px 4px 6px rgba(255, 251, 28, 0.425);
+}
+#hangmanPic {
+  filter:opacity(75%);
+  width: 50%;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 57, 0.678));
+}
+/*-------------------------------------------------------------------------------------------------*/
+/* TRANSFER 365*/
+
+.contenedor365{
+  width: 75%; /* El contenedor ocupará el 70% del ancho de la pantalla */
+  height: 50vh; /* El contenedor ocupará el 70% de la altura de la pantalla */
+  border: 1px solid white;
   border-radius: 20px;
   padding: 10px;
   position: absolute;
-  right: 12%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Agregar sombra al contenedor */
 }
-.boton_e{
+
+.instrucciones365{
+  color: #663366;
+  position: absolute; /* Cambio a posición absoluta */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final para centrado */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  text-align:justify;
+  text-align-last:left;
+  }
+
+.campo_nombre365{
+  font-size: 20px;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  right: 10%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+}
+
+.texto_nombre365{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 550;
+  font-size: 20px;
+  position: absolute;
+  top: 40%; 
+  right: 76%;
+  transform: translateY(-50%);
+}
+
+.boton_inicio365{
   background-color: #663366;
-  color: #ffff00;
+  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute; /* Cambio a posición absoluta */
+  top: 80%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final para centrado */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 14px;
-  transition: background-color 0.3s;
-  z-index: 9995;
+  font-size: 24px;
+  transition: background-color 0.3s; /* transición para un cambio suave */
 }
-.boton_e:hover {
-  background-color: #ffff00;
-  color: #663366;
+
+.boton_reinicio:hover {
+  background-color: #ffff00; /* Cambiar color al hacer hover */
+  color: #663366; /* Cambiar color del texto al hacer hover */
 }
