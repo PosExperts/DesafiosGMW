@@ -93,7 +93,7 @@ img {
     top: 7%;
     left: 7%;
     cursor: pointer;
-    width: 3%;
+    width: 50px;
     transform: translateY(-50%);
     transition: filter 0.3s ease;
     z-index: 9998;

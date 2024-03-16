@@ -168,7 +168,7 @@ function crearContenedor() {
     contenedor.appendChild(campo_correo);
     //Texto destino
     var texto_destino = document.createElement('span');
-    texto_destino.textContent = 'Transferir A:';
+    texto_destino.textContent = 'Cuenta:';
     texto_destino.classList.add('texto_destino');
     contenedor.appendChild(texto_destino);
     texto_destino.style.display = 'none';

@@ -242,7 +242,7 @@ h2:hover {
   top: 7%;
   left: 7%;
   cursor: pointer;
-  width: 3%;
+  width: 50px;
   transform: translateY(-50%);
   transition: filter 0.3s ease;
   z-index: 9998;
@@ -282,6 +282,7 @@ h2:hover {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
   font-size: 24px;
+  z-index: 9998;
   transition: background-color 0.3s; /* transición para un cambio suave */
 }
 .boton_inicio:hover {
@@ -312,8 +313,8 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 40%;
-  left: 25%;
-  right: 10%;
+  left: 30%;
+  right: 5%;
   transform: translateY(-50%);
   border-radius: 8px;
 }
@@ -323,7 +324,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 40%; 
-  right: 76%;
+  right: 71%;
   transform: translateY(-50%);
 }
 .feedback_nombre{
@@ -340,7 +341,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 30%;
   right: 10%;
   transform: translateY(-50%);
   border-radius: 8px;
@@ -351,7 +352,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 50%; 
-  right: 76%;
+  right: 71%;
   transform: translateY(-50%);
 }
 .feedback_correo{
@@ -368,7 +369,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 60%;
-  left: 31%;
+  left: 30%;
   right: 10%;
   transform: translateY(-50%);
   border-radius: 8px;
@@ -379,7 +380,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 60%; 
-  right: 70%;
+  right: 71%;
   transform: translateY(-50%);
 }
 .feedback_destino{
@@ -396,7 +397,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 70%;
-  left: 25%;
+  left: 30%;
   right: 10%;
   transform: translateY(-50%);
   border-radius: 8px;
@@ -407,7 +408,7 @@ h2:hover {
   font-size: 20px;
   position: absolute;
   top: 70%; 
-  right: 76%;
+  right: 71%;
   transform: translateY(-50%);
 }
 .feedback_monto{
@@ -494,7 +495,7 @@ h2:hover {
 .boton_recargar{
   background-color: #ffff00;
   color: #663366;
-  padding: 10px 20px;
+  padding: 8px 5px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -522,6 +523,9 @@ h2:hover {
   font-size: 20px;
   text-align:justify;
   text-align-last:left;
+  width: 90%;
+  line-height: 1;
+
 }
 /*-------------------------------------------------------------------------------------------------*/
 /* Pacman */
@@ -549,20 +553,20 @@ h2:hover {
 /* Controles */
 .controles{
   position: fixed;
-  top: 60%;
+  top: 45%;
   right: 5%;
   width: 150px;
   height:150px;
   transform: translateY(-50%);
-  width: 10%;
+
   border: none;
   border-radius: 25px;
   padding: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
 }
 .boton_e{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 5px 10px;
   border: none;
   border-radius: 20px;
@@ -578,8 +582,8 @@ h2:hover {
   z-index: 9995;
 }
 .boton_p{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 5px 15px;
   border: none;
   border-radius: 20px;
@@ -595,8 +599,8 @@ h2:hover {
   z-index: 9995;
 }
 .boton_up{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 6px 6px;
   border: none;
   border-radius: 5px;
@@ -607,30 +611,30 @@ h2:hover {
   transform: translate(-50%, -50%);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 30px;
   transition: background-color 0.3s;
   z-index: 9995;
 }
 .boton_down{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 6px 6px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 30px;
   transition: background-color 0.3s;
   z-index: 9995;
 }
 .boton_right{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 6px 6px;
   border: none;
   border-radius: 5px;
@@ -641,13 +645,13 @@ h2:hover {
   transform: translate(-50%, -50%);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 30px;
   transition: background-color 0.3s;
   z-index: 9995;
 }
 .boton_left{
-  background-color: #663366;
-  color: #ffff00;
+  background-color: #4d174d;
+  color: #eeff00;
   padding: 6px 6px;
   border: none;
   border-radius: 5px;
@@ -658,7 +662,7 @@ h2:hover {
   transform: translate(-50%, -50%);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 30px;
   transition: background-color 0.3s;
   z-index: 9995;
 }
@@ -675,7 +679,7 @@ h2:hover {
   font-size: 18px; /* Example font size */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
-  margin: 5px;
+  margin: 1px;
   box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.253); 
 }
 .boton_letra:hover {

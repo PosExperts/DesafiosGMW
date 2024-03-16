@@ -96,11 +96,11 @@ function reset() {
   randomWord();
   guessedWord();
   updateMistakes();
-  generateButtons(5,8);
+  generateButtons(2,5);
 }
 
 document.getElementById('maxWrong').innerHTML = maxWrong;
 
 randomWord();
-generateButtons(5,8);
+generateButtons(7,5);
 guessedWord();
