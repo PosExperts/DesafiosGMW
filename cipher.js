@@ -96,7 +96,7 @@ function reset() {
   randomWord();
   guessedWord();
   updateMistakes();
-  generateButtons(2,5);
+  generateButtons(7,5);
 }
 
 document.getElementById('maxWrong').innerHTML = maxWrong;
