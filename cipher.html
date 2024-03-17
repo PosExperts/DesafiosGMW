@@ -15,7 +15,6 @@ onclick="window.location.href='./index.html'">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Bootstrap 4 CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <title>Descifra el mensaje</title>
 </head>
@@ -26,16 +25,26 @@ onclick="window.location.href='./index.html'">
     <div class="intentos">
       Intentos: <span id='mistakes'>0</span> de <span id='maxWrong'></span>
    </div>
-    <img id='hangmanPic' src="./IMG/Cipher/0.png" alt="">
+   <img id='hangmanPic' src="./IMG/Cipher/0.png" alt="">
     <div class="guiones">
-    <p id="wordSpotlight">The word to be guessed goes here</p>
+    <p id="wordSpotlight">_ _ _</p>
     </div>
+    <br>
+  <div id="minimenu" class="intentos">
+    <span class="pcorrectas" id="pcorrect">0</span> correctas
+    
+    <span class="pincorrectas" id="pincorrect">0</span> incorrectas
+    <br><br>
+    Quedan: <span class="intentos" id="quedan"></span> Palabras
+  </div>
+  
    <br>
     <div id="keyboard"></div>
    </div>
   </div> 
 </div>
-<button class="b_reiniciar" onClick="reset()">REINICIAR</button>
+
+<button class="b_reiniciar" onClick="reset()">SIGUIENTE</button>
 </body>
 </html>
   <script  src="./cipher.js"></script>

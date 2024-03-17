@@ -1,4 +1,4 @@
-var fruits = [
+var palabra = [
   "PHISHING",
   "MALWARE",
   "E-COMMERCE",
@@ -14,19 +14,53 @@ var fruits = [
   "CIBERDELINCUENTE"
 ]
 
+shuffle(palabra); // Shuffle the words at the start of the game
+
+
 let answer = '';
 let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
+let wordIndex = 0; // Initialize word index
+
+var pcorrect = 0;
+var pincorrect = 0;
+var QuedanP = palabra.length;
+
+document.getElementById('quedan').textContent = palabra.length;
+
+function updateQuedanP(){
+  document.getElementById('quedan').textContent = QuedanP;
+}
+
+
+function updatePcorrect() {
+  document.getElementById('pcorrect').textContent = pcorrect;
+}
+function updatePincorrect() {
+  document.getElementById('pincorrect').textContent = pincorrect;
+}
 
 function randomWord() {
-  answer = fruits[Math.floor(Math.random() * fruits.length)];
+  if (wordIndex >= palabra.length) { // If all words have been used, shuffle and reset index
+    shuffle(palabra);
+    wordIndex = 0;
+  }
+  answer = palabra[wordIndex];
+  wordIndex++;
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 function generateButtons(rows, columns) {
   let buttonsHTML = '';
-  let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-1234567890';
+  let alphabet = 'QWERTYUIOPASDFGHJKLÑZXCVBNM-0123456789';
   for (let i = 0; i < rows; i++) {
     buttonsHTML += '<div class="button-row">';
     for (let j = 0; j < columns; j++) {
@@ -68,13 +102,17 @@ function updateHangmanPicture() {
 function checkIfGameWon() {
   if (wordStatus === answer) {
     document.getElementById('keyboard').innerHTML = 'CORRECTO!!!';
+    pcorrect++; 
+    updatePcorrect();
   }
 }
 
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
     document.getElementById('wordSpotlight').innerHTML = 'RESPUESTA: ' + answer;
-    document.getElementById('keyboard').innerHTML = 'PERDISTE!!!';
+    document.getElementById('keyboard').innerHTML = 'INCORRECTO!!!';
+    pincorrect++;
+    updatePincorrect();
   }
 }
 
@@ -89,18 +127,29 @@ function updateMistakes() {
 }
 
 function reset() {
-  mistakes = 0;
-  guessed = [];
-  document.getElementById('hangmanPic').src = './IMG/Cipher/0.png';
+  if (QuedanP > 0) {
+     mistakes = 0;
+     guessed = [];
+     document.getElementById('hangmanPic').src = './IMG/Cipher/0.png';
 
-  randomWord();
-  guessedWord();
-  updateMistakes();
-  generateButtons(7,5);
+     randomWord();
+     guessedWord();
+     updateMistakes();
+     generateButtons(4,10);
+     QuedanP--;
+     updateQuedanP();
+  } 
+  else if (QuedanP === 0) {
+    document.getElementById('keyboard').innerHTML ='!FIN!<br><br>'+pcorrect+'<br>CORRECTAS<br><br>'+' '+pincorrect+'<br>INCORRECTAS';
+    document.getElementById('minimenu').innerHTML = ' ';
+    QuedanP--;
+  }
+  else if (QuedanP <0) {
+    location.reload();
+  }
 }
-
 document.getElementById('maxWrong').innerHTML = maxWrong;
 
 randomWord();
-generateButtons(7,5);
+generateButtons(4,10);
 guessedWord();
