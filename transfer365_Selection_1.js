@@ -7,6 +7,11 @@ var receptor = 'none';
 var precio = 80;
 
 function crearContenedor() {
+
+    var contenedor = document.createElement('div');
+    contenedor.classList.add('contenedor365');
+    document.body.appendChild(contenedor);
+
     function updateReceptorText (){
         if (receptor=='Balance_1'){
             texto_receptor.textContent='Jugador 1'
@@ -50,10 +55,33 @@ function crearContenedor() {
             button.style.display = 'block';
         });
     }
-    var contenedor = document.createElement('div');
-    contenedor.classList.add('contenedor365');
-    document.body.appendChild(contenedor);
-    //TITULO
+
+    //LOGO I
+    var producto = document.createElement('img');
+    producto.src='./IMG/GMWLogo_Color_S1.png';
+    producto.style.display = 'block';
+    producto.style.width = '125px';
+    producto.style.height = 'auto';
+    producto.style.position = 'absolute';
+    producto.style.top = '15%';
+    producto.style.left = '17%';
+    producto.style.transform = 'translate(-50%, -50%)';
+    contenedor.appendChild(producto);
+    //LOGO D
+    var producto = document.createElement('img');
+    producto.src='./IMG/TRANSFERLogo_B_S1.png';
+    producto.style.display = 'block';
+    producto.style.width = '95px';
+    producto.style.height = 'auto';
+    producto.style.position = 'absolute';
+    producto.style.top = '16%';
+    producto.style.left = '85%';
+    producto.style.transform = 'translate(-50%, -50%)';
+    contenedor.appendChild(producto);
+
+
+
+
     var texto_titulo = document.createElement('span');
     texto_titulo.textContent = emisor;
     texto_titulo.classList.add('titulo365');

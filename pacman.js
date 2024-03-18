@@ -130,10 +130,10 @@ Pacman.Ghost = function (game, map, colour) {
             if (secondsAgo(eatable) > 5) { 
                 return game.getTick() % 20 > 10 ? "#FFFFFF" : "#c83bf7"; 
             } else { 
-                return "#c83bf7"; //Color comestible
+                return "#009ceb"; //Color comestible
             }
         } else if(eaten) { 
-            return "#350d3f"; //Color Comido INVISIBLE
+            return "#003366"; //Color Comido INVISIBLE
         } 
         return colour;
     };
@@ -558,7 +558,7 @@ Pacman.Map = function (size) {
 
         var i, j, p, line;
         
-        ctx.strokeStyle = "#ff00e5"; //COLOR DE PAREDES
+        ctx.strokeStyle = "#009ceb"; //COLOR DE PAREDES
         ctx.lineWidth   = 2; //GROSOR DE PAREDES
         ctx.lineCap     = "round"; //butt,round,square
         
@@ -612,7 +612,7 @@ Pacman.Map = function (size) {
                 if (map[i][j] === Pacman.PILL) {
                     ctx.beginPath();
 
-                    ctx.fillStyle = "#350d3f"; //Color Fondo Pildora
+                    ctx.fillStyle = "#003366"; //Color Fondo Pildora
 		            ctx.fillRect((j * blockSize), (i * blockSize), 
                                  blockSize, blockSize);
 
@@ -635,7 +635,7 @@ Pacman.Map = function (size) {
         
         var i, j, size = blockSize;
 
-        ctx.fillStyle = "#350d3f"; //Color fondo de linea
+        ctx.fillStyle = "#003366"; //Color fondo de linea
 	    ctx.fillRect(0, 0, width * size, height * size);
 
         drawWall(ctx);
@@ -660,7 +660,7 @@ Pacman.Map = function (size) {
         if (layout === Pacman.EMPTY || layout === Pacman.BLOCK || 
             layout === Pacman.BISCUIT) {
             
-            ctx.fillStyle = "#350d3f"; //Color fondo de mapa
+            ctx.fillStyle = "#003366"; //Color fondo de mapa
 		    ctx.fillRect((x * blockSize), (y * blockSize), 
                          blockSize, blockSize);
 
@@ -880,7 +880,7 @@ var PACMAN = (function () {
         var topLeft  = (map.height * map.blockSize),
             textBase = topLeft + 17;
         
-        ctx.fillStyle = "#662168"; //Color Pie de pagina
+        ctx.fillStyle = "#006699"; //Color Pie de pagina
         ctx.fillRect(0, topLeft, (map.width * map.blockSize), 30);
         
         ctx.fillStyle = "#FFFF00";

@@ -15,11 +15,15 @@ document.addEventListener('touchend', handleDragEnd, false);
 const cardPool = [
     './IMG/Swipe/mail1_right.png',
     './IMG/Swipe/malware1_left.png',
-    './IMG/Swipe/mail2_right.png',
     './IMG/Swipe/malware2_left.png',
     './IMG/Swipe/malware3_left.png',
-
-    // Add more paths as needed
+    './IMG/Swipe/malware4_left.png',
+    './IMG/Swipe/malware5_left.png',
+    './IMG/Swipe/malware6_left.png',
+    './IMG/Swipe/mail2_right.png',
+    './IMG/Swipe/malware7_left.png',
+    './IMG/Swipe/malware2_left.png',
+    './IMG/Swipe/mail3_right.png',
 ];
 
 // Initial card creation
