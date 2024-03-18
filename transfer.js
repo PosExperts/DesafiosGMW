@@ -2,15 +2,17 @@ var puntaje = 0;
 function crearContenedor() {
     var contenedor = document.createElement('div');
     contenedor.classList.add('contenedor');
+    contenedor.style.backgroundImage = "url('./IMG/PANTALLAS.png')";
+    contenedor.style.backgroundSize = 'cover';
     // Crear la imagen izquierda
     var imagenIzquierda = document.createElement('img');
-    imagenIzquierda.src = './IMG/GMWLogo_Color_S1.png';
+    imagenIzquierda.src = './IMG/GMWLogo_Color_S2.png';
     imagenIzquierda.style.float = 'left';
-    imagenIzquierda.style.width = '25%';
+    imagenIzquierda.style.width = '15%';
     imagenIzquierda.style.height = 'auto';
     // Crear la imagen derecha
     var imagenDerecha = document.createElement('img');
-    imagenDerecha.src = './IMG/TRANSFERLogo_BW_S1.png';
+    imagenDerecha.src = './IMG/TRANSFERLogo_WB_S1.png';
     imagenDerecha.style.float = 'right';
     imagenDerecha.style.width = '25%';
     imagenDerecha.style.height = 'auto';
@@ -23,7 +25,7 @@ function crearContenedor() {
     //BOTON INICIO
     var boton_inicio = document.createElement('button');
     boton_inicio.textContent = 'Empezar';
-    boton_inicio.classList.add('boton_inicio');
+    boton_inicio.classList.add('boton_enviar');
     contenedor.appendChild(boton_inicio);
     document.body.appendChild(contenedor);
 
@@ -39,6 +41,8 @@ function crearContenedor() {
     var instrucciones = document.createElement('p');
     instrucciones.textContent = "Introduce los datos del destinatario, cada destinatario correcto suma 1 punto! Recuerda que los correos llevan @ más .com y las cuentas tienen 16 dígitos";
     instrucciones.classList.add('instrucciones');
+    instrucciones.style.width = '37%' ;
+    instrucciones.style.color = 'white';
     contenedor.appendChild(instrucciones);
     
 
@@ -74,9 +78,8 @@ function crearContenedor() {
                 boton_puntaje.classList.add('boton_puntajefinal');
                 boton_reinicio.classList.remove('boton_recargar'); // Quita la clase 'boton_recargar'
                 boton_reinicio.classList.add('boton_reinicio'); // Añade la clase 'boton_reinicio'
-
-
-
+                texto_banco2.style.display = 'none';
+                dropdown.style.display = 'none';
             }
         }, 1000); // Actualizar el contador cada segundo (1000 milisegundos)
     }
@@ -97,6 +100,10 @@ function crearContenedor() {
     campo_monto.style.display = 'block';
     boton_reinicio.style.display = 'block';
     instrucciones.style.display = 'none';
+    dropdown.style.display = 'block';
+    texto_banco2.style.display = 'block';
+
+
     });    
 
     boton_reinicio.addEventListener('click', function() {
@@ -109,10 +116,9 @@ function crearContenedor() {
     boton_puntaje.classList.add('boton_puntaje');
     contenedor.appendChild(boton_puntaje);
     boton_puntaje.style.display = 'none';
-
     //BOTON ENVIAR
     var boton_enviar = document.createElement('button');
-    boton_enviar.textContent = 'Enviar';
+    boton_enviar.textContent = 'TRANSFERIR';
     boton_enviar.classList.add('boton_enviar');
     contenedor.appendChild(boton_enviar);
     boton_enviar.style.display = 'none'; 
@@ -122,75 +128,118 @@ function crearContenedor() {
     feedback_nombre.classList.add('feedback_nombre');
     contenedor.appendChild(feedback_nombre);
     feedback_nombre.style.display = 'none'; 
+    feedback_nombre.style.top = '36%';
     // Crear elemento para feedback_monto
     var feedback_monto = document.createElement('div');
     feedback_monto.textContent = 'No se permiten letras.';
-    feedback_monto.classList.add('feedback_monto');
+    feedback_monto.classList.add('feedback_nombre');
     contenedor.appendChild(feedback_monto);
     feedback_monto.style.display = 'none';
+    feedback_monto.style.top = '66%';
+
     // Crear elemento para feedback_destino
     var feedback_destino = document.createElement('div');
     feedback_destino.textContent = 'Máximo 16 Números.';
-    feedback_destino.classList.add('feedback_destino');
+    feedback_destino.classList.add('feedback_nombre');
     contenedor.appendChild(feedback_destino);
     feedback_destino.style.display = 'none';
+    feedback_destino.style.top = '56%';
+
     // Crear elemento para feedback_correo
     var feedback_correo = document.createElement('div');
     feedback_correo.textContent = 'Debe Incluir @ y .com';
-    feedback_correo.classList.add('feedback_correo');
+    feedback_correo.classList.add('feedback_nombre');
     contenedor.appendChild(feedback_correo);
     feedback_correo.style.display = 'none';
+    feedback_correo.style.top = '46%';
     //Texto NOMBRE
     var texto_nombre = document.createElement('span');
     texto_nombre.textContent = 'Nombre:';
-    texto_nombre.classList.add('texto_nombre');
+    texto_nombre.classList.add('texto_de_campo');
     contenedor.appendChild(texto_nombre);
+    texto_nombre.style.top = '36%';
     texto_nombre.style.display = 'none';
     //CAMPO NOMBRE
     var campo_nombre = document.createElement('input');
     campo_nombre.type = 'text';
-    campo_nombre.placeholder = 'Nombre';
-    campo_nombre.classList.add('campo_nombre');
+    campo_nombre.placeholder = 'Introdusca el nombre';
+    campo_nombre.classList.add('campo_a_llenar');
     campo_nombre.style.display = 'none';
+    campo_nombre.style.top = '40%';
     contenedor.appendChild(campo_nombre);
+
+    //CAMPO BANCO
+    var dropdown = document.createElement('select');
+    var options_banco = ['Banco 1', 'Banco 2', 'Banco 3'];
+    // Create a default placeholder option
+    var placeholderOption = document.createElement('option');
+    placeholderOption.text = 'Institución de destino';
+    placeholderOption.disabled = true;
+    placeholderOption.selected = true;
+    dropdown.add(placeholderOption);
+    // Loop options_banco array and add them to the dropdown
+    options_banco.forEach(function(optionText) {
+        var option = document.createElement('option');
+        option.text = optionText;
+        dropdown.add(option);
+    });
+    // Set any additional attributes or styles for the dropdown menu
+    dropdown.classList.add('dropdown_menu');
+    dropdown.style.display = 'none'; // Initially hide the dropdown menu
+    contenedor.appendChild(dropdown);
+
+        //Texto banco destino
+        var texto_banco2 = document.createElement('span');
+        texto_banco2.textContent = 'Destino:';
+        texto_banco2.classList.add('texto_de_campo');
+        contenedor.appendChild(texto_banco2);
+        texto_banco2.style.top = '25%';
+        texto_banco2.style.display = 'none';
+
     //Texto Correo
     var texto_correo = document.createElement('span');
     texto_correo.textContent = 'Correo:';
-    texto_correo.classList.add('texto_correo');
+    texto_correo.classList.add('texto_de_campo');
     contenedor.appendChild(texto_correo);
+    texto_correo.style.top = '46%';
     texto_correo.style.display = 'none';
     //CAMPO CORREO
     var campo_correo = document.createElement('input');
     campo_correo.type = 'text';
     campo_correo.placeholder = 'Correo';
-    campo_correo.classList.add('campo_correo');
+    campo_correo.classList.add('campo_a_llenar');
     campo_correo.style.display = 'none';
+    campo_correo.style.top = '50%';
     contenedor.appendChild(campo_correo);
     //Texto destino
     var texto_destino = document.createElement('span');
     texto_destino.textContent = 'Cuenta:';
-    texto_destino.classList.add('texto_destino');
+    texto_destino.classList.add('texto_de_campo');
     contenedor.appendChild(texto_destino);
+    texto_destino.style.top = '56%';
     texto_destino.style.display = 'none';
     //CAMPO DESTINO
     var campo_destino = document.createElement('input');
     campo_destino.type = 'text';
     campo_destino.placeholder = 'Destinatario';
-    campo_destino.classList.add('campo_destino');
+    campo_destino.classList.add('campo_a_llenar');
     campo_destino.style.display = 'none';
+    campo_destino.style.top = '60%';
     contenedor.appendChild(campo_destino);
     //Texto monto
     var texto_monto = document.createElement('span');
     texto_monto.textContent = 'Monto: $';
-    texto_monto.classList.add('texto_monto');
+    texto_monto.classList.add('texto_de_campo');
     contenedor.appendChild(texto_monto);
+    texto_monto.style.top = '66%';
     texto_monto.style.display = 'none';        
     //CAMPO MONTO
     var campo_monto = document.createElement('input');
     campo_monto.type = 'text';
     campo_monto.placeholder = 'Cantidad';
-    campo_monto.classList.add('campo_monto');
+    campo_monto.classList.add('campo_a_llenar');
     campo_monto.style.display = 'none';
+    campo_monto.style.top= '70%';
     contenedor.appendChild(campo_monto);
 
     // Eventos de entrada para validar campos
