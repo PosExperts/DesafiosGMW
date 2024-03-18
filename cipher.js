@@ -163,7 +163,7 @@ document.getElementById('boton_recargar_pagina').style.display = 'none';
 
 //-----------------------------------------
 
-let countdownDuration = 3; // Duration of the countdown timer in seconds
+let countdownDuration = 60; // Duration of the countdown timer in seconds
 
 function startGame() {
   startTimer();
