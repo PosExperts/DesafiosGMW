@@ -30,6 +30,13 @@ onclick="window.location.href='./index.html'">
     <p id="wordSpotlight">_ _ _</p>
     </div>
     <br>
+
+    <button id="boton_timer" class="b_reiniciar"
+    onclick="startGame()">Empezar</button>
+    <br>
+    <button id="boton_recargar_pagina" class="b_reiniciar"
+    onclick="reloadPage()">REINICIAR</button>
+
   <div id="minimenu" class="intentos">
     <span class="pcorrectas" id="pcorrect">0</span> correctas
     
@@ -44,7 +51,7 @@ onclick="window.location.href='./index.html'">
   </div> 
 </div>
 
-<button class="b_reiniciar" onClick="reset()">SIGUIENTE</button>
+<button id="Boton_saltar" class="b_reiniciar" onClick="reset()">SALTAR</button>
 </body>
 </html>
   <script  src="./cipher.js"></script>

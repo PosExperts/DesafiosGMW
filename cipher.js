@@ -26,7 +26,7 @@ let wordIndex = 0; // Initialize word index
 
 var pcorrect = 0;
 var pincorrect = 0;
-var QuedanP = palabra.length;
+var QuedanP = palabra.length+1;
 
 document.getElementById('quedan').textContent = palabra.length;
 
@@ -140,9 +140,14 @@ function reset() {
      updateQuedanP();
   } 
   else if (QuedanP === 0) {
-    document.getElementById('keyboard').innerHTML ='!FIN!<br><br>'+pcorrect+'<br>CORRECTAS<br><br>'+' '+pincorrect+'<br>INCORRECTAS';
+    document.getElementById('keyboard').innerHTML =pcorrect+'<br>CORRECTAS<br><br>'+' '+pincorrect+'<br>INCORRECTAS';
     document.getElementById('minimenu').innerHTML = ' ';
     QuedanP--;
+    document.getElementById('Boton_saltar').style.display = 'none';
+    document.getElementById('boton_timer').textContent = `¡FÍN!`;
+    timeElapsed=0;
+    document.getElementById('boton_recargar_pagina').style.display = 'block';
+
   }
   else if (QuedanP <0) {
     location.reload();
@@ -150,6 +155,56 @@ function reset() {
 }
 document.getElementById('maxWrong').innerHTML = maxWrong;
 
+document.getElementById('Boton_saltar').style.display = 'none';
 randomWord();
-generateButtons(4,10);
 guessedWord();
+document.getElementById('boton_recargar_pagina').style.display = 'none';
+
+
+//-----------------------------------------
+
+let countdownDuration = 3; // Duration of the countdown timer in seconds
+
+function startGame() {
+  startTimer();
+  disableButton();
+  reset();
+  document.getElementById('Boton_saltar').style.display = 'block';
+}
+
+function disableButton() {
+  var button = document.getElementById('boton_timer');
+  button.disabled = true;
+}
+
+
+function startTimer() {
+  timeElapsed = countdownDuration;
+  updateTimer();
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+  document.getElementById('boton_timer').textContent = `Tiempo: ${timeElapsed}s`;
+  timeElapsed--;
+  if (timeElapsed < 0) {
+    clearInterval(timerInterval);
+    // Call a function to handle what happens when the timer reaches 0
+    handleTimeUp();
+  }
+}
+
+function handleTimeUp() {
+  // You can put any actions you want to happen when the timer reaches 0 here
+  document.getElementById('keyboard').innerHTML =pcorrect+'<br>CORRECTAS<br><br>'+' '+pincorrect+'<br>INCORRECTAS';
+  document.getElementById('minimenu').innerHTML = ' ';
+  QuedanP--;
+  document.getElementById('boton_timer').textContent = `¡FÍN!`;
+  document.getElementById('Boton_saltar').style.display = 'none';
+  document.getElementById('boton_recargar_pagina').style.display = 'block';
+
+}
+
+function reloadPage() {
+  location.reload()
+}
