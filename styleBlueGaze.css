@@ -271,90 +271,51 @@ h2:hover {
   background-color: rgb(230, 230, 230);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Agregar sombra al contenedor */
 }
-.boton_inicio {
-  background-color: #003366;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  position: absolute; /* Cambio a posición absoluta */
-  top: 80%; /* Centrado verticalmente */
-  left: 50%; /* Centrado horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste final para centrado */
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 550;
-  font-size: 24px;
-  z-index: 9998;
-  transition: background-color 0.3s; /* transición para un cambio suave */
-}
-.boton_inicio:hover {
-  background-color: #006699; /* Cambiar color al hacer hover */
-}
 .boton_enviar{
-  background-color: #003366;
+  background-color: #ffcc00;
   color: white;
-  padding: 10px 20px;
-  border: none;
+  padding: 8px 24px;
+  border: solid;
   border-radius: 20px;
+  border-color: #ffcc00;
+  border-width: 2px;
   cursor: pointer;
   position: absolute; /* Cambio a posición absoluta */
-  top: 85%; /*  verticalmente */
+  top: 77%; /*  verticalmente */
   left: 50%; /* Centrado horizontalmente */
   transform: translate(-50%, -50%); /* Ajuste final para centrado */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 24px;
+  font-size: 14px;
   transition: background-color 0.3s; /* transición para un cambio suave */
+  border-width: 2px;
 }
 .boton_enviar:hover {
-  background-color: #006699; /* Cambiar color al hacer hover */
+  background-color: #00669900; /* Cambiar color al hacer hover */
+  border: solid;
+  border-color: #ffcc00;
+  border-width: 2px;
 }
-.campo_nombre{
-  font-size: 20px;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  right: 5%;
-  transform: translateY(-50%);
-  border-radius: 8px;
-}
-.texto_nombre{
+.texto_de_campo{
+  color: white;
+  text-transform: uppercase;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 14px;
   position: absolute;
-  top: 40%; 
-  right: 71%;
+  left: 33%;
   transform: translateY(-50%);
 }
 .feedback_nombre{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
   font-size: 15px;
-  color:#006699;
+  color:#ffffff;
   position: absolute;
-  top: 35%;
-  left: 50%;
+  left: 56%;
   transform: translate(-50%, -50%);
-}
-.campo_correo{
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  right: 10%;
-  transform: translateY(-50%);
-  border-radius: 8px;
-}
-.texto_correo{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 550;
-  font-size: 20px;
-  position: absolute;
-  top: 50%; 
-  right: 71%;
-  transform: translateY(-50%);
+  z-index: 9995;
+
 }
 .feedback_correo{
   font-family: 'Josefin Sans', sans-serif;
@@ -366,24 +327,6 @@ h2:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.campo_destino{
-  font-size: 20px;
-  position: absolute;
-  top: 60%;
-  left: 30%;
-  right: 10%;
-  transform: translateY(-50%);
-  border-radius: 8px;
-}
-.texto_destino{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 550;
-  font-size: 20px;
-  position: absolute;
-  top: 60%; 
-  right: 71%;
-  transform: translateY(-50%);
-}
 .feedback_destino{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
@@ -393,24 +336,6 @@ h2:hover {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.campo_monto{
-  font-size: 20px;
-  position: absolute;
-  top: 70%;
-  left: 30%;
-  right: 10%;
-  transform: translateY(-50%);
-  border-radius: 8px;
-}
-.texto_monto{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 550;
-  font-size: 20px;
-  position: absolute;
-  top: 70%; 
-  right: 71%;
-  transform: translateY(-50%);
 }
 .feedback_monto{
   font-family: 'Josefin Sans', sans-serif;
@@ -422,34 +347,32 @@ h2:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.boton_puntaje{
-  background-color: #003366;
+.boton_puntaje {
+  background-color: #00336600;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  position: absolute; /* Cambio a posición absoluta */
-  top: 85%; /*  verticalmente */
-  left: 85%; /* Centrado horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste final para centrado */
+  position: absolute;
+  top: 86%;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
   font-size: 14px;
-  transition: background-color 0.3s; /* transición para un cambio suave */
-}
-.boton_puntaje:hover {
-  background-color: #006699; /* Cambiar color al hacer hover */
+  transition: background-color 0.3s;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .mostrar-contador {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
   text-align: center;
   font-family: 'Pixeled';
-  color:#003366;
+  color:#ffffff;
 }
 .boton_reinicio {
   background-color: #003366;
@@ -468,10 +391,12 @@ h2:hover {
   transition: background-color 0.3s; /* transición para un cambio suave */
 }
 .boton_reinicio:hover {
-  background-color: #006699; /* Cambiar color al hacer hover */
+  background-color: #00669900; /* Cambiar color al hacer hover */
+  border: solid;
+  border-color: #ffffff;
 }
 .boton_puntajefinal{
-  background-color: #003366;
+  background-color: #00336600;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -483,7 +408,7 @@ h2:hover {
   transform: translate(-50%, -50%);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
-  font-size: 24px;
+  font-size: 44px;
   transition: background-color 0.3s;
 }
 .boton_recargar{
@@ -494,13 +419,13 @@ h2:hover {
   border-radius: 20px;
   cursor: pointer;
   position: absolute; /* Cambio a posición absoluta */
-  top: 85%; /*  verticalmente */
-  left: 20%; /* Centrado horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste final para centrado */
+  top: 93%; /*  verticalmente */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 550;
   font-size: 14px;
   transition: background-color 0.3s; /* transición para un cambio suave */
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .boton_recargar:hover {
   background-color: #006699; /* Cambiar color al hacer hover */
@@ -532,8 +457,8 @@ h2:hover {
   transform: translate(-50%, -50%); /* Ajuste final para centrado */
 }
 #pacman {
-  height:743px;
-  width:564px;
+  height:1677px;
+  width:1268px;
   margin:50px auto;
 }
 @font-face {
@@ -908,3 +833,35 @@ h2:hover {
   position: absolute;
   text-align: center;
 }
+.campo_a_llenar{
+  background-color: #003366;
+  border: solid;
+  border-color: #003366;
+  color:white;
+  font-size: 14px;
+  position: absolute;
+  left: 32%;
+  right: 32%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+}
+.campo_a_llenar::placeholder {
+  text-transform: uppercase;
+  color: #006699;
+}
+.dropdown_menu{
+  border-radius: 8px;
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  top: 27%;
+  width: 36%; /* Adjust the width as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #003366;
+  border-radius: 8px;
+}
+select.dropdown_menu option[disabled] {
+  color: #006699;
+}
+
