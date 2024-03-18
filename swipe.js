@@ -3,6 +3,9 @@ let isDragging = false;
 let startX, offsetX;
 let lastCardIndex = -1; // Initialize the index of the last card used
 
+var maxturns = 11;
+var isturn = 1;
+
 document.addEventListener('mousedown', handleDragStart, false);
 document.addEventListener('mousemove', handleDrag, false);
 document.addEventListener('mouseup', handleDragEnd, false);
@@ -22,12 +25,12 @@ const cardPool = [
     './IMG/Swipe/malware6_left.png',
     './IMG/Swipe/mail2_right.png',
     './IMG/Swipe/malware7_left.png',
-    './IMG/Swipe/malware2_left.png',
     './IMG/Swipe/mail3_right.png',
 ];
 
 // Initial card creation
 addNewCard();
+
 
 function handleDragStart(event) {
     event.preventDefault();
@@ -45,10 +48,29 @@ function handleDrag(event) {
     let card = document.querySelector('.card');
     if (card) {
         card.style.transform = `translateX(${offsetX}px)`;
+        
     }
 }
 
 let score = 0; // Initialize the score
+
+function scorefinal() {
+
+    if (isturn == maxturns){
+        cardContainer.style.display = 'none';
+        document.getElementById('scoreDisplay').style.display = 'none';
+
+        var finalScoreText = document.createElement('p');
+        finalScoreText.textContent = `PUNTAJE FINAL: `+score;
+        finalScoreText.classList.add('final-score');
+        document.body.appendChild(finalScoreText);
+
+    }
+    else{};
+}
+
+
+
 
 function handleDragEnd(event) {
     if (!isDragging) return;
@@ -68,16 +90,21 @@ function handleDragEnd(event) {
             feedbackMessage = `Correcto! +1`;
             feedbackClass = 'correct';
             score++; // Increment the score
+            isturn++;
+            scorefinal();
         } else if (offsetX < -50 && isCorrectDirection(cardPath, 'left')) {
             // Swiped left and correct direction
             console.log(`Card ${cardId} swiped left - Correct!`);
             feedbackMessage = `Correcto! +1`;
             feedbackClass = 'correct';
             score++; // Increment the score
+            isturn++;
+            scorefinal();
         } else {
             feedbackMessage = `Incorrecto!`;
             feedbackClass = 'incorrect';
-
+            isturn++;
+            scorefinal();
         }
 
         // Create a feedback element

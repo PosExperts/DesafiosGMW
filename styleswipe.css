@@ -255,3 +255,15 @@ canvas {
     filter: drop-shadow(0 0 10px rgb(255, 255, 255));
     font-size: larger;
 }
+.final-score{
+  font-family: 'Pixeled';
+  color: #ffffff;
+  src: url('./Pixeled.ttf') format('truetype');
+  font-weight: 700;
+  font-size: 28px;
+  text-shadow: 0 0 10px rgb(252, 169, 255);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
