@@ -248,7 +248,7 @@ canvas {
   }
   .score-text {
     position: absolute;
-    bottom: 0%;
+    top: 16.5%;
     right: 44%;
     transform: translateY(-50%);
     font-family: 'Pixeled';

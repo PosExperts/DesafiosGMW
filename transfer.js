@@ -162,7 +162,7 @@ function crearContenedor() {
     //CAMPO NOMBRE
     var campo_nombre = document.createElement('input');
     campo_nombre.type = 'text';
-    campo_nombre.placeholder = 'Introdusca el nombre';
+    campo_nombre.placeholder = 'INTRODUZCA el nombre';
     campo_nombre.classList.add('campo_a_llenar');
     campo_nombre.style.display = 'none';
     campo_nombre.style.top = '40%';

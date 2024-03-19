@@ -208,3 +208,10 @@ function handleTimeUp() {
 function reloadPage() {
   location.reload()
 }
+
+document.addEventListener('keydown', function(event) {
+  const keyPressed = event.key.toUpperCase();
+  if (/^[A-Z0-9-]$/.test(keyPressed)) { // Check if the key pressed is a valid guess
+    handleGuess(keyPressed);
+  }
+});
