@@ -1,16 +1,16 @@
 var palabra = [
   "PHISHING",
   "MALWARE",
-  "E-COMMERCE",
+  "ECOMMERCE",
   "INTERNET",
-  "TRANSFER-365",
+  "TRANSFER365",
   "FIREWALL",
   "CUENTA",
   "FRAUDE",
   "BANCO",
   "HACKER",
   "SOFTWARE",
-  "WI-FI",
+  "WIFI",
   "CIBERDELINCUENTE"
 ]
 
@@ -163,7 +163,7 @@ document.getElementById('boton_recargar_pagina').style.display = 'none';
 
 //-----------------------------------------
 
-let countdownDuration = 180; // Duration of the countdown timer in seconds
+let countdownDuration = 300; // Duration of the countdown timer in seconds
 
 function startGame() {
   startTimer();
