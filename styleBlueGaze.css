@@ -448,12 +448,12 @@ h2:hover {
 /*-------------------------------------------------------------------------------------------------*/
 /* Pacman */
 .img_pacman {
-  width: 60px; /* Ancho original de la imagen */
+  width: 150px; /* Ancho original de la imagen */
   height: auto; /* Altura ajustada automáticamente para mantener la proporción */
   position: absolute;
   z-index: 9995;
   left: 50%; /* Centrado horizontalmente */
-  top: 470px;
+  top: 860px;
   transform: translate(-50%, -50%); /* Ajuste final para centrado */
 }
 #pacman {
