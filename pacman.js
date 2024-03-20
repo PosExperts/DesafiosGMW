@@ -895,7 +895,7 @@ var PACMAN = (function () {
         for (var i = 0, len = user.getLives(); i < len; i++) {
             ctx.fillStyle = "#FFFF00";
             ctx.beginPath();
-            ctx.moveTo(150 + (50 * i) + map.blockSize / 2,
+            ctx.moveTo(150 + (30 * i) + map.blockSize / 2,
                        (topLeft+1) + map.blockSize / 8);
             
             ctx.arc(150 + (30* i) + map.blockSize / 2,
