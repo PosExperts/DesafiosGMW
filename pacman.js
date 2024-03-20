@@ -22,6 +22,8 @@ var NONE        = 4,
 
 Pacman.FPS = 30;
 
+
+
 Pacman.Ghost = function (game, map, colour) {
 
     var position  = null,
@@ -138,69 +140,74 @@ Pacman.Ghost = function (game, map, colour) {
         return colour;
     };
 
-    function draw(ctx) {
+//ghosts
+
+function draw(ctx) {
   
-        var s    = map.blockSize, 
-            top  = (position.y/10) * s,
-            left = (position.x/10) * s;
+    var s    = map.blockSize, 
+        top  = (position.y/10) * s,
+        left = (position.x/10) * s;
+
+    if (eatable && secondsAgo(eatable) > 8) {
+        eatable = null;
+    }
     
-        if (eatable && secondsAgo(eatable) > 8) {
-            eatable = null;
-        }
-        
-        if (eaten && secondsAgo(eaten) > 3) { 
-            eaten = null;
-        }
-        
-        var tl = left + s;
-        var base = top + s - 3;
-        var inc = s / 10;
+    if (eaten && secondsAgo(eaten) > 3) { 
+        eaten = null;
+    }
+    
+    var tl = left + s;
+    var base = top + s - 3;
+    var inc = s / 10;
 
-        var high = game.getTick() % 10 > 5 ? 3  : -3;
-        var low  = game.getTick() % 10 > 5 ? -3 : 3;
+    var high = game.getTick() % 10 > 5 ? 3  : -3;
+    var low  = game.getTick() % 10 > 5 ? -3 : 3;
 
-        ctx.fillStyle = getColour();
-        ctx.beginPath();
+    ctx.fillStyle = getColour();
+    ctx.beginPath();
 
-        ctx.moveTo(left, base);
+    ctx.moveTo(left, base);
 
-        ctx.quadraticCurveTo(left, top, left + (s/2),  top);
-        ctx.quadraticCurveTo(left + s, top, left+s,  base);
-        
-        // Wavy things at the bottom
-        ctx.quadraticCurveTo(tl-(inc*1), base+high, tl - (inc * 2),  base);
-        ctx.quadraticCurveTo(tl-(inc*3), base+low, tl - (inc * 4),  base);
-        ctx.quadraticCurveTo(tl-(inc*5), base+high, tl - (inc * 6),  base);
-        ctx.quadraticCurveTo(tl-(inc*7), base+low, tl - (inc * 8),  base); 
-        ctx.quadraticCurveTo(tl-(inc*9), base+high, tl - (inc * 10), base); 
+    ctx.quadraticCurveTo(left, top, left + (s/2),  top);
+    ctx.quadraticCurveTo(left + s, top, left+s,  base);
+    
+    // Wavy things at the bottom
+    ctx.quadraticCurveTo(tl-(inc*1), base+high, tl - (inc * 2),  base);
+    ctx.quadraticCurveTo(tl-(inc*3), base+low, tl - (inc * 4),  base);
+    ctx.quadraticCurveTo(tl-(inc*5), base+high, tl - (inc * 6),  base);
+    ctx.quadraticCurveTo(tl-(inc*7), base+low, tl - (inc * 8),  base); 
+    ctx.quadraticCurveTo(tl-(inc*9), base+high, tl - (inc * 10), base); 
 
-        ctx.closePath();
-        ctx.fill();
+    ctx.closePath();
+    ctx.fill();
 
-        ctx.beginPath();
-        ctx.fillStyle = "#FFF";
-        ctx.arc(left + 6,top + 6, s / 6, 0, 300, false);
-        ctx.arc((left + s) - 6,top + 6, s / 6, 0, 300, false);
-        ctx.closePath();
-        ctx.fill();
+    //EYE
+    ctx.beginPath();
+    ctx.fillStyle = "#FFF";
+    ctx.arc(left + 24,top + 12, s / 6, 0, 300, false);
+    ctx.arc((left + s) - 24,top + 12, s / 6, 0, 300, false);
+    ctx.closePath();
+    ctx.fill();
 
-        var f = s / 12;
-        var off = {};
-        off[RIGHT] = [f, 0];
-        off[LEFT]  = [-f, 0];
-        off[UP]    = [0, -f];
-        off[DOWN]  = [0, f];
 
-        ctx.beginPath();
-        ctx.fillStyle = "#000";
-        ctx.arc(left+6+off[direction][0], top+6+off[direction][1], 
-                s / 15, 0, 300, false);
-        ctx.arc((left+s)-6+off[direction][0], top+6+off[direction][1], 
-                s / 15, 0, 300, false);
-        ctx.closePath();
-        ctx.fill();
+    var f = s / 12;
+    var off = {};
+    off[RIGHT] = [f, 0];
+    off[LEFT]  = [-f, 0];
+    off[UP]    = [0, -f];
+    off[DOWN]  = [0, f];
 
-    };
+    //IRIS
+    ctx.beginPath();
+    ctx.fillStyle = "#000";
+    ctx.arc(left+24+off[direction][0], top+12+off[direction][1], 
+            s / 15, 0, 300, false);
+    ctx.arc((left+s)-24+off[direction][0], top+12+off[direction][1], 
+            s / 15, 0, 300, false);
+    ctx.closePath();
+    ctx.fill();
+
+};
 
     function pane(pos) {
 
@@ -806,7 +813,7 @@ var PACMAN = (function () {
     
     function dialog(text) {
         ctx.fillStyle = "#FFFF00";
-        ctx.font      = "12px Pixeled";
+        ctx.font      = "24px Pixeled"; //Tamaño fuente
         var width = ctx.measureText(text).width,
             x     = ((map.width * map.blockSize) - width) / 2;        
         ctx.fillText(text, x, (map.height * 10) + 8);
@@ -888,12 +895,12 @@ var PACMAN = (function () {
         for (var i = 0, len = user.getLives(); i < len; i++) {
             ctx.fillStyle = "#FFFF00";
             ctx.beginPath();
-            ctx.moveTo(150 + (25 * i) + map.blockSize / 2,
-                       (topLeft+1) + map.blockSize / 2);
+            ctx.moveTo(150 + (50 * i) + map.blockSize / 2,
+                       (topLeft+1) + map.blockSize / 8);
             
-            ctx.arc(150 + (25 * i) + map.blockSize / 2,
-                    (topLeft+1) + map.blockSize / 2,
-                    map.blockSize / 2, Math.PI * 0.25, Math.PI * 1.75, false);
+            ctx.arc(150 + (30* i) + map.blockSize / 2,
+                    (topLeft+1) + map.blockSize / 8,
+                    map.blockSize / 4, Math.PI * 0.25, Math.PI * 1.75, false);
             ctx.fill();
         }
 

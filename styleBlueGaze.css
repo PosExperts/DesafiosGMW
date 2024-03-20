@@ -447,19 +447,25 @@ h2:hover {
 }
 /*-------------------------------------------------------------------------------------------------*/
 /* Pacman */
+.pacman-div{
+  position: absolute; /* Cambio a posición absoluta */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final para centrado */
+}
 .img_pacman {
   width: 150px; /* Ancho original de la imagen */
   height: auto; /* Altura ajustada automáticamente para mantener la proporción */
   position: absolute;
   z-index: 9995;
+  top: 51.5%; /* Centrado verticalmente */
   left: 50%; /* Centrado horizontalmente */
-  top: 860px;
   transform: translate(-50%, -50%); /* Ajuste final para centrado */
 }
 #pacman {
-  height:1677px;
-  width:1268px;
-  margin:50px auto;
+  height:1450px;
+  width:1342px;
+  margin:20px auto;
 }
 @font-face {
   font-family: 'Pixeled';
