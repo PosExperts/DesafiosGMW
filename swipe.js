@@ -25,7 +25,6 @@ const cardPool = [
     './IMG/Swipe/malware6_left.png',
     './IMG/Swipe/mail2_right.png',
     './IMG/Swipe/malware7_left.png',
-    './IMG/Swipe/mail3_right.png',
 ];
 
 // Initial card creation
