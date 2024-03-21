@@ -3,7 +3,7 @@ let isDragging = false;
 let startX, offsetX;
 let lastCardIndex = -1; // Initialize the index of the last card used
 
-var maxturns = 11;
+var maxturns = 10;
 var isturn = 1;
 
 document.addEventListener('mousedown', handleDragStart, false);
