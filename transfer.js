@@ -39,7 +39,7 @@ function crearContenedor() {
 
     // Instrucciones del juego
     var instrucciones = document.createElement('p');
-    instrucciones.textContent = "Introduce los datos del destinatario, cada destinatario correcto suma 1 punto! Recuerda que los correos llevan @ más .com y las cuentas tienen 16 dígitos";
+    instrucciones.textContent = "Introduce los datos del destinatario, cada destinatario correcto suma 1 punto. Recuerda que los correos llevan @ más .com y las cuentas tienen 16 dígitos";
     instrucciones.classList.add('instrucciones');
     instrucciones.style.width = '37%' ;
     instrucciones.style.color = 'white';
