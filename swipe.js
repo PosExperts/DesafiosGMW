@@ -3,7 +3,7 @@ let isDragging = false;
 let startX, offsetX;
 let lastCardIndex = -1; // Initialize the index of the last card used
 
-var maxturns = 10;
+var maxturns = 11;
 var isturn = 1;
 
 document.addEventListener('mousedown', handleDragStart, false);
@@ -25,6 +25,7 @@ const cardPool = [
     './IMG/Swipe/malware6_left.png',
     './IMG/Swipe/mail2_right.png',
     './IMG/Swipe/malware7_left.png',
+    './IMG/Swipe/malware8_left.png',
 ];
 
 // Initial card creation
