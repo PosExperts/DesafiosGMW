@@ -476,9 +476,9 @@ h2:hover {
 /*-------------------------------------------------------------------------------------------------*/
 /* Controles */
 .controles{
-  position: fixed;
-  top: 45%;
-  right: 5%;
+  position: absolute;
+  top: 1700px;
+  right: 250px;
   width: 150px;
   height:150px;
   transform: translateY(-50%);
