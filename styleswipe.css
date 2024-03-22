@@ -40,7 +40,8 @@
     font-family: 'Pixeled';
     color: #ffffff;
     text-align: center;
-    src: url('./Pixeled.ttf') format('truetype');
+    src: url('./Pixeled.ttf') format('truetype'), /* TrueType font */
+         url('./Pixeled.woff') format('woff'); /* WOFF font */
     font-weight: normal;
     font-style: normal;
     font-weight: 700;
@@ -251,6 +252,8 @@ canvas {
     right: 44%;
     transform: translateY(-50%);
     font-family: 'Pixeled';
+    src:  url('./Pixeled.ttf') format('truetype'), /* TrueType font */
+          url('./Pixeled.woff') format('woff'); /* WOFF font */
     filter: drop-shadow(0 0 10px rgb(255, 255, 255));
     font-size: larger;
 }
