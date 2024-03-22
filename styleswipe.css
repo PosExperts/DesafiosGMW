@@ -112,8 +112,7 @@ img {
     align-items: center;
     height: 80vh;
 }
-.card {
-}
+
 .card img {
     width: 75%;
     height: 75%;
@@ -267,3 +266,4 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/*-------------------------------------------------------------------------------------*/
