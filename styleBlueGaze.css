@@ -12,9 +12,6 @@ body {
 	animation: gradient 5s ease infinite;
 	height: 100vh;
 }
-
-
-
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -26,6 +23,21 @@ body {
 		background-position: 0% 50%;
 	}
 }
+
+.special-bg-page {
+  background-image: url('./IMG/PacmanBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /*-------------------------------------------------------------------------------------------------*/
 /* Interlace */
 body::after {
@@ -212,6 +224,14 @@ h2:hover {
 }
 /*--------------------------------------------------------------------------------------------------------*/
 /*PIE DE PAGINA*/
+.img_pie_centro {
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  width: 20%;
+  transform: translateX(-50%);
+}
+
 .img_pie_izquierda {
   position: fixed;
   bottom: 0;

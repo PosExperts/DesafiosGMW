@@ -1,6 +1,6 @@
 
   body {
-      background: linear-gradient(-45deg, #df5bbe, #4e1542);
+    background: linear-gradient(-45deg, #006699, #003366);
       background-size: 400% 400%;
       animation: gradient 5s ease infinite;
       height: 100vh;
@@ -16,6 +16,8 @@
           background-position: 0% 50%;
       }
   }
+
+  
   /*-------------------------------------------------------------------------------------------------*/
   /* Interlace */
   body::after {
@@ -48,13 +50,13 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 28px;
-    text-shadow: 0 0 10px rgb(252, 169, 255);
+    text-shadow: 0 0 10px rgb(169, 206, 255);
     transition: text-shadow 0.2s ease-in-out;
     margin: 30px auto;
     line-height: 1.3;
 }
 h1:hover {
-    text-shadow: 0 0 15px rgb(251, 148, 255);
+    text-shadow: 0 0 15px rgb(148, 221, 255);
 }
 p {
     color: #ffffff;
@@ -140,14 +142,14 @@ img {
 	border: 10px solid #ffffff2f;
 	border-radius: 8px;
 	box-shadow: 0 10px 6px -6px rgba(255, 255, 255, 0.5);
-	-moz-box-shadow: 0 10px 6px -6px rgba(248, 40, 255, 0.5);
-	-webkit-box-shadow: 0 10px 6px -6px rgba(198, 76, 255, 0.5);
+	-moz-box-shadow: 0 10px 6px -6px #003366;
+	-webkit-box-shadow: 0 10px 6px -6px #006699;
 }
 .letters span { /* Fondo sopa de letras */
 	float:left;
 	width: 40px;
 	height: 40px;
-	background: rgb(145, 73, 133);
+	background: #006699;
 	line-height: 43px;
 	text-align: center;
 	font-size: 1em;
@@ -165,14 +167,14 @@ img {
 	border: 10px solid #ffffff2f;
 	border-radius: 8px;
 	box-shadow: 0 10px 6px -6px rgba(255, 255, 255, 0.5);
-	-moz-box-shadow: 0 10px 6px -6px rgba(248, 40, 255, 0.5);
-	-webkit-box-shadow: 0 10px 6px -6px rgba(198, 76, 255, 0.5);
+	-moz-box-shadow: 0 10px 6px -6px #003366;
+	-webkit-box-shadow: 0 10px 6px -6px #006699;
 }
 .words span { /* Fondo de Contenedor de palabras */
 	float:left;
 	width: 220px;
 	height: 40px;
-	background: rgb(145, 73, 133);
+	background: #006699;
 	line-height: 45px;
 	text-align: center;
 }
@@ -263,7 +265,7 @@ canvas {
   src: url('./Pixeled.ttf') format('truetype');
   font-weight: 700;
   font-size: 28px;
-  text-shadow: 0 0 10px rgb(252, 169, 255);
+  text-shadow: 0 0 10px #006699;
   position: fixed;
   top: 50%;
   left: 50%;

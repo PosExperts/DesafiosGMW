@@ -2,7 +2,7 @@ var puntaje = 0;
 function crearContenedor() {
     var contenedor = document.createElement('div');
     contenedor.classList.add('contenedor');
-    contenedor.style.backgroundImage = "url('./IMG/PANTALLAS.png')";
+    contenedor.style.backgroundImage = "url('./IMG/PANTALLAS2.png')";
     contenedor.style.backgroundSize = 'cover';
     // Crear la imagen izquierda
     var imagenIzquierda = document.createElement('img');
@@ -10,6 +10,25 @@ function crearContenedor() {
     imagenIzquierda.style.float = 'left';
     imagenIzquierda.style.width = '15%';
     imagenIzquierda.style.height = 'auto';
+// Create the imagenCoin1
+var imagenCoin1 = document.createElement('img');
+imagenCoin1.src = './IMG/TRANSFER_Coin1.png';
+imagenCoin1.style.position = 'absolute';
+imagenCoin1.style.bottom = '20%'; // Adjust the bottom position as needed
+imagenCoin1.style.right = '10px'; // Adjust the right position as needed
+imagenCoin1.style.width = '20%';
+imagenCoin1.style.height = 'auto';
+contenedor.appendChild(imagenCoin1);
+
+// Create the imagenCoin2
+var imagenCoin2 = document.createElement('img');
+imagenCoin2.src = './IMG/TRANSFER_Coin2.png';
+imagenCoin2.style.position = 'absolute';
+imagenCoin2.style.bottom = '20%'; // Adjust the bottom position as needed
+imagenCoin2.style.left = '10px'; // Adjust the left position as needed
+imagenCoin2.style.width = '20%';
+imagenCoin2.style.height = 'auto';
+contenedor.appendChild(imagenCoin2);
     // Crear la imagen derecha
     var imagenDerecha = document.createElement('img');
     imagenDerecha.src = './IMG/TRANSFERLogo_WB_S1.png';
