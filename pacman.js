@@ -813,7 +813,7 @@ var PACMAN = (function () {
     
     function dialog(text) {
         ctx.fillStyle = "#FFFF00";
-        ctx.font      = "24px Pixeled"; //Tamaño fuente
+        ctx.font      = "40px Pixeled"; //Tamaño fuente
         var width = ctx.measureText(text).width,
             x     = ((map.width * map.blockSize) - width) / 2;        
         ctx.fillText(text, x, (map.height * 10) + 8);

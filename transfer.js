@@ -66,7 +66,7 @@ contenedor.appendChild(imagenCoin2);
     
 
     function iniciarCuentaAtras() {
-        var segundos = 45; // Cambia el valor a la cantidad de segundos que desees
+        var segundos = 60; // Cambia el valor a la cantidad de segundos que desees
         var mostrarContador = document.createElement('div');
         mostrarContador.className = 'mostrar-contador';
         document.body.appendChild(mostrarContador);
